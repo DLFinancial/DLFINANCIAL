@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&L Financial Solutions LLC | Taxes, Insurance & Notary</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-navy: #0b192c;
+            --accent-blue: #38bdf8;
+            --light-blue: #e0f2fe;
+            --text-dark: #1e293b;
+            --text-light: #f8fafc;
+            --bg-light: #f1f5f9;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .brand-logo-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-blue);
+            background-color: var(--primary-navy);
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--accent-blue);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .contact-btn-nav {
+            background-color: var(--accent-blue);
+            color: var(--primary-navy) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 4px;
+            font-weight: 600 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #1e3a8a 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-logo-large {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-blue);
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            display: block;
+            background-color: var(--primary-navy);
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: var(--primary-navy);
+        }
+
+        .btn-primary:hover {
+            background-color: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-navy);
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            color: var(--primary-navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-navy);
+            margin-bottom: 0.3rem;
+        }
+
+        .es-title {
+            font-size: 1rem;
+            color: #0284c7;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .service-card p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-container h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-card h4 {
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-card a, .contact-card p {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            word-break: break-all;
+        }
+
+        .contact-card a:hover {
+            color: var(--accent-blue);
+            text-decoration: underline;
+        }
+
+        .social-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #09101a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-btns {
+                flex-direction: column;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-container">
+                <!-- PEGA AQUÍ EL ENLACE DE TU LOGOTIPO -->
+                <img src="URL_DE_TU_LOGO_AQUI" alt="D&L Logo" class="brand-logo-img">
+                <div class="logo-text">
+                    D&L Financial Solutions
+                    <span>Taxes, Insurance & Notary</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#contact" class="contact-btn-nav">Contáctenos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- PEGA AQUÍ EL ENLACE DE TU LOGOTIPO -->
+            <img src="URL_DE_TU_LOGO_AQUI" alt="D&L Financial Solutions Logo" class="hero-logo-large">
+            
+            <h1>D&L Financial Solutions LLC</h1>
+            <p>Health & Life Insurance | Income Tax Preparation | Notary Public & More</p>
+            <p>Seguros de Salud y Vida | Preparación de Impuestos | Notario Público y más</p>
+            
+            <div class="hero-btns">
+                <a href="https://wa.me/17866265826" class="btn btn-primary" target="_blank">Chat on WhatsApp</a>
+                <a href="tel:7866265826" class="btn btn-secondary">Llámanos / Call Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Nuestros Servicios / Our Services</h2>
+            <p>Soluciones profesionales adaptadas a sus necesidades personales y comerciales.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1: Tax Preparation -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Preparación de Impuestos" class="service-img">
+                <div class="service-content">
+                    <h3>Income Tax Preparation</h3>
+                    <div class="es-title">Preparación de Impuestos</div>
+                    <p>Servicios expertos de preparación de impuestos federales y estatales diseñados para maximizar su reembolso y garantizar total precisión.</p>
+                </div>
+            </div>
+
+            <!-- Service 2: Insurance (Hospital americano exterior) -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=600&q=80" alt="Seguros de Salud y Vida" class="service-img">
+                <div class="service-content">
+                    <h3>Health & Life Insurance</h3>
+                    <div class="es-title">Seguros de Salud y Vida</div>
+                    <p>Protegiendo lo que más importa. Opciones integrales de seguros de salud y vida personalizadas para la tranquilidad y seguridad de su familia.</p>
+                </div>
+            </div>
+
+            <!-- Service 3: Notary & Business -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Notario Público" class="service-img">
+                <div class="service-content">
+                    <h3>Notary Public & Business Services</h3>
+                    <div class="es-title">Notario Público y más</div>
+                    <p>Servicios confiables de notaría pública y asistencia dedicada para las necesidades de su pequeño negocio y documentación oficial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="services contact-section" id="contact" style="background-color: var(--primary-navy); margin: 0; padding: 5rem 2rem;">
+        <div class="contact-container">
+            <h2>Contáctenos / Get in Touch</h2>
+            <p>Comuníquese hoy mismo para recibir orientación financiera, de seguros y de impuestos confiable.</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/17866265826" target="_blank">(786) 626-5826</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Teléfono / Call</h4>
+                    <a href="tel:7866265826">(786) 626-5826</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Telegram</h4>
+                    <a href="https://t.me/7866265826" target="_blank">(786) 626-5826</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Correo / Email</h4>
+                    <a href="mailto:dlfinancialsolutions@yahoo.com">dlfinancialsolutions@yahoo.com</a>
+                </div>
+                <div class="contact-card">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-links-list">
+                        <a href="https://www.instagram.com/dlfinancialsolutions?stkn=MW91bGdoOHJnZmh4Yg%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/share/198iCS1YKL/?mibextid=wwXIfr" target="_blank">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 D&L Financial Solutions LLC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
